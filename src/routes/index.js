@@ -8,8 +8,8 @@ import NotFoundPage from '../screens/NotFoundPage';
 export default function Routes() {
   return (
     <Switch>
-      <Route path='/' exact component={ HomePage } />
-      <Route path='/country/:name' exact component={CountryDetailsPage} />
+      <Route path="/" exact component={HomePage} />
+      <Route path="/country/:name" exact component={CountryDetailsPage} />
       <Route component={NotFoundPage} />
     </Switch>
   );

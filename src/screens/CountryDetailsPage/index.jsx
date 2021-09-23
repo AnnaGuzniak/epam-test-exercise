@@ -39,17 +39,17 @@ class CountryDetailsPage extends React.Component {
 
   showDetailNotification = value => {
     const { showNotification } = this.props;
-     showNotification({
-        message: `You clicked on the ${value} properties`,
-      });
-  }
+    showNotification({
+      message: `You clicked on the ${value} properties`,
+    });
+  };
 
   renderPropByType = prop => {
     const { countryDetails } = this.props;
     const value = prop.value(countryDetails);
     switch (prop.type) {
       case DETAIL_TYPES.TITLE:
-        return <h1>{ value }</h1>;
+        return <h1>{value}</h1>;
       case DETAIL_TYPES.TEXT:
         return (
           <Property onClick={() => this.showDetailNotification(prop.title)}>
@@ -82,9 +82,11 @@ class CountryDetailsPage extends React.Component {
     return (
       <PageContainer>
         <BackButton />
-        <DetailContainer>  { this.renderDetails() }</DetailContainer>
-      
-        <div style={{color: 'red', fontSize: '10px'}}>You can click on any property to see notification functionality</div>
+        <DetailContainer> {this.renderDetails()}</DetailContainer>
+
+        <div style={{ color: 'red', fontSize: '10px' }}>
+          You can click on any property to see notification functionality
+        </div>
       </PageContainer>
     );
   }
@@ -97,6 +99,6 @@ const mapStateToProps = ({ countries }) => ({
 
 const mapDispatchToProps = {
   getCountryByName,
-  showNotification
+  showNotification,
 };
 export default compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(CountryDetailsPage);

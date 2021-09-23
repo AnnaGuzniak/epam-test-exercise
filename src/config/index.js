@@ -7,7 +7,7 @@ module.exports = {
   },
   baseUrl,
   api: {
-	  countries: '/all',
-	  country: name => `/name/${name}`
+    countries: '/all',
+    country: name => `/name/${name}`,
   },
 };

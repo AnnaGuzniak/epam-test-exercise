@@ -9,7 +9,7 @@ import {
   GET_COUNTRY_FAIL,
 } from '../actions/countries';
 
-export default function (state = initialState, action) {
+export default function createReducer(state = initialState, action) {
   switch (action.type) {
     case GET_COUNTRIES:
     case GET_COUNTRY:

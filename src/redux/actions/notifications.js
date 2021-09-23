@@ -10,7 +10,7 @@ export function showNotification({ message }) {
   };
 }
 
-export function clearNotification (id) {
+export function clearNotification(id) {
   return dispatch => {
     dispatch({
       type: CLEAR_NOTIFICATION,

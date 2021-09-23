@@ -1,7 +1,9 @@
 import { notifications } from './initialState/notifications';
 import { countries } from './initialState/countries';
 
-export default {
+const initialState = {
   notifications,
   countries,
 };
+
+export default initialState;

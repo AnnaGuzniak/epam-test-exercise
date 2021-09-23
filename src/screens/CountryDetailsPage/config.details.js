@@ -5,7 +5,7 @@ export const countryDetailsConfig = [
     type: DETAIL_TYPES.TITLE,
     title: 'Name',
     value: cell => cell.name?.common,
-  }, 
+  },
   {
     type: DETAIL_TYPES.IMAGE,
     title: 'Flag',
@@ -32,12 +32,11 @@ export const countryDetailsConfig = [
   {
     type: DETAIL_TYPES.FLAG,
     title: 'Independent',
-    value: cell => ''+cell.independent,
+    value: cell => '' + cell.independent,
   },
   {
     type: DETAIL_TYPES.FLAG,
     title: 'Landlocked',
-    value: cell => ''+cell.landlocked,
+    value: cell => '' + cell.landlocked,
   },
- 
 ];

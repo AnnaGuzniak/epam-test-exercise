@@ -8,13 +8,12 @@ import MainFooter from './components/MainFooter';
 import { getCurrentDate } from './utils/formatDate';
 import NotificationsContainer from './components/NotificationsContainer';
 
-
 const Container = styled.div`
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 `;
 
 class App extends Component {
- render() {
+  render() {
     const { store } = this.props;
 
     return (
@@ -26,7 +25,7 @@ class App extends Component {
               <MainHeader />
               <Routes />
             </Container>
-            <MainFooter title={`Footer for test exercise. ${getCurrentDate()}`}/>
+            <MainFooter title={`Footer for test exercise. ${getCurrentDate()}`} />
           </BrowserRouter>
         </div>
       </Provider>

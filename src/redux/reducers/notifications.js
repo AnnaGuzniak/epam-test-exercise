@@ -6,7 +6,7 @@ const generateId = () => {
   return Math.random().toString(36).substr(2, 9);
 };
 
-export default function (state = initialState, action) {
+export default function createReducer(state = initialState, action) {
   let draft = {};
   switch (action.type) {
     case SHOW_NOTIFICATION:
@@ -20,7 +20,6 @@ export default function (state = initialState, action) {
     case CLEAR_NOTIFICATION:
       draft = { ...state };
       delete draft[action.id];
-      console.log('id',action.id);
       console.log(draft);
       return {
         ...draft,

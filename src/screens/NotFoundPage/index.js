@@ -30,10 +30,9 @@ const ErrorSubTitle = styled.span`
   max-width: 45rem;
 `;
 
-
 function NotFoundPage({ history }) {
   return (
-    <StyledPageContainerDiv> 
+    <StyledPageContainerDiv>
       <ErrorCode>404</ErrorCode>
       <ErrorTitle>Page Not Found</ErrorTitle>
       <ErrorSubTitle>The page you are looking for can not be found.</ErrorSubTitle>

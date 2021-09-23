@@ -30,7 +30,7 @@ export function getCountries() {
   };
 }
 
-export function getCountryByName( countryName) {
+export function getCountryByName(countryName) {
   return async dispatch => {
     dispatch({
       type: GET_COUNTRY,

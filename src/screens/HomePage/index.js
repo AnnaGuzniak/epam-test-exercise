@@ -14,25 +14,21 @@ const PageContainer = styled.div`
 `;
 
 class HomePage extends React.Component {
-
   onSelectedCountry = country => {
-     const { history } = this.props;
-    history.push(
-      publicUrls.countryDetails(country.name.common)
-    );  
-  }
+    const { history } = this.props;
+    history.push(publicUrls.countryDetails(country.name.common));
+  };
 
   render() {
     return (
       <PageContainer>
-        <CountryList onSelectedCountry={ this.onSelectedCountry } />
+        <CountryList onSelectedCountry={this.onSelectedCountry} />
       </PageContainer>
     );
   }
 }
 
-const mapStateToProps = () => ({
-});
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = {
   showNotification,

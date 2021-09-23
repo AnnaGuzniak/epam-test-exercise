@@ -45,7 +45,7 @@ const SearchInput = styled.input`
 
 const CommonTable = ({ headers, items, searchBy, onClickRow }) => {
   const [filteredItems, setFilteredItems] = useState(items);
-	
+
   const handlerSearch = value => {
     setFilteredItems(items.filter(item => searchBy(item, value.target.value)));
   };

@@ -12,9 +12,9 @@ const Footer = styled.div`
   }
 `;
 
-const MainFooter = ( { title }) => (
+const MainFooter = ({ title }) => (
   <Footer>
-    <span>{ title }</span>
+    <span>{title}</span>
   </Footer>
 );
 

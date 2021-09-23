@@ -1,7 +1,6 @@
 import 'whatwg-fetch';
 import { baseUrl } from '../config';
 
-
 const applicationJsonContentType = 'application/json';
 
 /**
@@ -98,8 +97,6 @@ function throwResponseError({ errorId, response, responsePayload }) {
   throw error;
 }
 
-
-
 /**
  * Requests a URL, returning a promise
  *
@@ -126,5 +123,5 @@ export default async function request(url, options = {}, { stringify = true } = 
 
   return fetch(baseUrl + requestUrl, options)
     .then(checkStatus)
-    .then(parseJSON)
+    .then(parseJSON);
 }
