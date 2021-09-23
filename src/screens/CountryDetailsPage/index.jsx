@@ -40,7 +40,7 @@ class CountryDetailsPage extends React.Component {
   showDetailNotification = value => {
     const { showNotification } = this.props;
     showNotification({
-      message: `You clicked on the ${value} properties`,
+      message: `You clicked on the property: ${value}`,
     });
   };
 
@@ -71,18 +71,23 @@ class CountryDetailsPage extends React.Component {
     }
   };
 
-  renderDetails = () => countryDetailsConfig.map(prop => this.renderPropByType(prop));
+  renderDetails = () => countryDetailsConfig.map(prop => <div key={prop.title}>{this.renderPropByType(prop)}</div>);
 
   render() {
-    const { countryDetails, isLoading } = this.props;
-    console.log(countryDetails);
-    if (!countryDetails || isLoading) {
+    const { countryDetails, isLoading, match } = this.props;
+    if (isLoading) {
       return <Loading />;
+    }
+
+    if (!countryDetails) {
+      return <PageContainer>
+        <h1>There aren't country with name { match.params.name }</h1>
+      </PageContainer>
     }
     return (
       <PageContainer>
         <BackButton />
-        <DetailContainer> {this.renderDetails()}</DetailContainer>
+        <DetailContainer> {countryDetails && this.renderDetails()}</DetailContainer>
 
         <div style={{ color: 'red', fontSize: '10px' }}>
           You can click on any property to see notification functionality
@@ -94,7 +99,7 @@ class CountryDetailsPage extends React.Component {
 
 const mapStateToProps = ({ countries }) => ({
   isLoading: countries.isLoading,
-  countryDetails: countries.countryDetails,
+  countryDetails: countries.countryDetails
 });
 
 const mapDispatchToProps = {

@@ -20,7 +20,6 @@ export default function createReducer(state = initialState, action) {
     case CLEAR_NOTIFICATION:
       draft = { ...state };
       delete draft[action.id];
-      console.log(draft);
       return {
         ...draft,
       };

@@ -57,14 +57,14 @@ const CommonTable = ({ headers, items, searchBy, onClickRow }) => {
         <HeaderTable>
           <div style={{ maxWidth: '30px' }} />
           {headers.map(({ key, title, width = 'auto' }) => (
-            <div key={key} style={{ maxWidth: width }}>
+            <div key={'header'+key} style={{ maxWidth: width }}>
               {title}
             </div>
           ))}
         </HeaderTable>
         <RowContainer>
           {filteredItems.map((item, index) => (
-            <RowTable key={item.key} onClick={() => onClickRow(item)}>
+            <RowTable key={'row'+index} onClick={() => onClickRow(item)}>
               <TableCell style={{ maxWidth: '30px' }} key={index}>
                 {index}
               </TableCell>
